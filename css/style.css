@@ -1,0 +1,328 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/fonts/Inter-VariableFont.ttf);
+  src: url(../assets/fonts/static/Inter-Bold.ttf);
+  src: url(../assets/fonts/static/Inter-ExtraBold.ttf);
+}
+@font-face {
+  font-family: "Inter Regular";
+  src: url(../assets/fonts/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter Bold";
+  src: url(../assets/fonts/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter Extra Bold";
+  src: url(../assets/fonts/static/Inter-ExtraBold.ttf);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --light-font-color: #A3A2A8;
+  --golden-font-color: #E7A94C;
+  --white: white;
+  --black: black;
+  --primary-color: #00001A;
+  --secondary-color: #F15D51;
+  --hover-font-color: var(--secondary-color);
+  --btn-bg-clr: var(--secondary-color);
+  --hovered-btn-bg-clr: var(--primary-color);
+  --body-margin: 1rem;
+  --header-height: 4rem;
+  --transition-fast: .5s;
+  --primary-gap: 1rem;
+  --secondary-gap: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+body {
+  margin: var(--body-margin);
+  margin-top: var(--header-height);
+  overflow-x: hidden;
+}
+
+p, a, h2 {
+  font-family: "Inter Regular";
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.header--main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  padding: var(--primary-gap);
+}
+
+.logo__image {
+  height: 1.2rem;
+}
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  line-height: 2rem;
+  padding: 10rem 0 0 55%;
+  background-image: linear-gradient(90deg, rgba(17, 17, 17, 0.6666666667) 50%, white 50%);
+  transition: transform var(--transition-fast) ease-in-out;
+}
+
+.header__nav.active {
+  transform: translateX(0px);
+}
+
+.button--burger {
+  height: 1.4rem;
+  width: 1.5rem;
+  display: flex;
+  z-index: 100;
+  justify-content: space-around;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.button--burger span {
+  width: 100%;
+  background-color: var(--black);
+  height: 3px;
+  transition: transform var(--transition-fast);
+  transition: width var(--transition-fast);
+}
+
+.button--burger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(-1px);
+  transform-origin: 0%;
+}
+
+.button--burger.active span:nth-child(2) {
+  width: 0;
+}
+
+.button--burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(1px);
+  transform-origin: 0%;
+}
+
+section#home {
+  display: flex;
+  margin-bottom: var(--secondary-gap);
+}
+
+div.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--secondary-gap);
+}
+
+.container--home {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--primary-gap);
+}
+
+.container--home-texts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--primary-gap);
+}
+
+.hero__heading {
+  font-size: 32pt;
+}
+
+.button--hero {
+  background-color: var(--secondary-color);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: var(--primary-gap);
+  color: var(--white);
+  font-family: "Inter Regular", sans-serif, arial;
+  letter-spacing: 0.5ch;
+}
+
+.container--left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--primary-gap);
+}
+
+.hero__slogan {
+  color: var(--light-font-color);
+}
+
+div.news-feed {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--primary-gap);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--primary-gap);
+}
+
+h1.title {
+  color: var(--golden-font-color);
+}
+
+h2.title {
+  font-weight: 600;
+  font-size: var(--font-300);
+  line-height: 2em;
+}
+
+p.title_helper {
+  color: var(--light-font-color);
+}
+
+.news-feed__item::after {
+  display: block;
+  content: "";
+  background-color: var(--light-font-color);
+  height: 1px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.news-feed__item:last-child::after {
+  display: none;
+}
+
+ol.popular-news {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.news-card {
+  display: flex;
+  gap: var(--primary-gap);
+  width: 300px;
+  max-width: 300px;
+  margin-bottom: var(--primary-gap);
+}
+.news-card .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.news-card__image {
+  width: 120px;
+  height: auto;
+}
+
+.news-card__role-number {
+  color: var(--light-font-color);
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.news-card__link {
+  font-family: "Inter Extra Bold";
+}
+
+img.--desktop {
+  display: none;
+}
+
+@media screen and (min-width: 680px) {
+  body {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 var(--primary-gap);
+  }
+  .header--main {
+    max-width: 1024px;
+    position: static;
+    padding: 0;
+  }
+  .button--burger {
+    display: none;
+  }
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    transform: none;
+    background-color: transparent;
+    background-image: none;
+    height: 100%;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    background-color: transparent;
+    justify-content: flex-end;
+  }
+  .list--links {
+    display: flex;
+    gap: var(--primary-gap);
+    transform: none;
+  }
+  div.hero {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: var(--primary-gap);
+  }
+  .container--home {
+    max-width: 70%;
+    min-width: 400px;
+  }
+  .container--home-texts {
+    flex-wrap: nowrap;
+  }
+  .container--home-texts > * {
+    width: 0;
+    flex-grow: 1;
+  }
+  .news-feed {
+    max-width: 300px;
+    margin: 0;
+  }
+  img.--mobile {
+    display: none !important;
+  }
+  img.--desktop {
+    display: block;
+  }
+  .popular-news {
+    display: flex;
+    justify-content: space-between;
+  }
+}/*# sourceMappingURL=style.css.map */
