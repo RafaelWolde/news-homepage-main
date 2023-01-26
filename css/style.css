@@ -31,7 +31,7 @@ html {
   --btn-bg-clr: var(--secondary-color);
   --hovered-btn-bg-clr: var(--primary-color);
   --body-margin: 1rem;
-  --header-height: 4rem;
+  --header-height: 7rem;
   --transition-fast: .5s;
   --primary-gap: 1rem;
   --secondary-gap: 3rem;
@@ -61,6 +61,10 @@ li {
 a {
   color: var(--black);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--golden-font-color);
 }
 
 .header--main {
@@ -174,6 +178,10 @@ div.hero {
   letter-spacing: 0.5ch;
 }
 
+.button--hero:hover {
+  background-color: var(--primary-color);
+}
+
 .container--left {
   display: flex;
   flex-direction: column;
@@ -202,9 +210,18 @@ h2.title {
   font-weight: 600;
   font-size: var(--font-300);
   line-height: 2em;
+  color: var(--white);
+}
+
+h2.title:hover {
+  color: var(--golden-font-color);
 }
 
 p.title_helper {
+  color: var(--light-font-color);
+}
+
+.news-card__helper-text {
   color: var(--light-font-color);
 }
 
@@ -252,6 +269,10 @@ ol.popular-news {
 
 .news-card__link {
   font-family: "Inter Extra Bold";
+}
+
+.news-card__link:hover {
+  color: var(--secondary-color);
 }
 
 img.--desktop {
